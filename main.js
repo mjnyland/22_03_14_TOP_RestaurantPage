@@ -1,1 +1,1 @@
-console.log("hello world!");
+(()=>{"use strict";console.log({theWorstPers:{title:"THE WORST PERSON IN THE WORLD",theater:"THEATER 1",runtime:"160 MINS",format:"35MM"}})})();
