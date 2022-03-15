@@ -1,1 +1,3 @@
-console.log('hello world!')
+import theWorstPers from './home.js'
+
+console.log(theWorstPers)
