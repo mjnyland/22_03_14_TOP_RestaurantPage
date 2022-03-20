@@ -1,3 +1,3 @@
-import theWorstPers from './home.js'
+import initializeSite from './website.js'
 
-console.log(theWorstPers)
+initializeSite()

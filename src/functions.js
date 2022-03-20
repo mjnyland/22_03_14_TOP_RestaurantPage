@@ -10,5 +10,9 @@ function clearHTML(el) {
     }
 }
 
+const Showtime = (title, theater, runtime, format) => {
+    return{title, theater, runtime, format}
+}
 
-export {createElement, clearHTML};
+
+export { createElement, clearHTML, Showtime };
