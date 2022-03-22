@@ -1,0 +1,25 @@
+*{
+    font-family: 'Roboto Mono', monospace;
+}
+
+body{
+    margin: 0;
+}
+
+.nav{
+    padding: 2em;
+    background-color: #0E0908;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+.member-login-button{
+    font-size: 12px;
+    height: 30px;
+    border: none;
+    border-radius: 2px;
+    background-color: #F23131;
+    color: white
+}

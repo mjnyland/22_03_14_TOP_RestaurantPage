@@ -13,11 +13,8 @@ function createEvents(arr){
             const eventName = createElement('H2', `event-${i}-name`)
             const eventDate = createElement('H4', `event-${i}-date`)
 
-            console.log(arr[i])
             eventName.textContent = arr[i].name;
             eventDate.textContent = arr[i].time;
-
-            console.log(eventName)
 
             eventCont.append(eventName, eventDate)
 

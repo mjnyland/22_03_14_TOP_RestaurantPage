@@ -35,21 +35,6 @@ function createNowPlaying(){
     return nowPlayingCont
 }
 
-function createNav(){
-    const nav = createElement('NAV', 'nav');
-
-    const menuLink = createElement('P', 'menu-link');
-    menuLink.textContent = 'Menu';
-
-    const logo = createElement('IMG', 'music-box-logo');
-    logo.src = '/src/images/MusicBox_Logo_White.png'
-    const memberLogin = createElement('BUTTON', 'member-login-button');
-    memberLogin.textContent = 'Member Login';
-
-    nav.append(menuLink, logo, memberLogin)
-    return nav
-}
-
 function createFeaturedMovies(){
     const featuredMovCont = createElement('DIV', 'featured-movie-cont');
     const featuredThumb = createElement('IMG', 'featured-movie-thumbnail');
@@ -76,38 +61,19 @@ function createInfo(){
     return infoSection
 }
 
-function createFooter(){
-    const footer = createElement('FOOTER', 'footer');
-
-    const logo = createElement('IMG', 'logo');
-    const homeLink = createElement('A', 'home-link');
-    homeLink.textContent = 'HOME';
-    const filmsLink = createElement('A', 'films-link');
-    filmsLink.textContent = 'FILMS';
-    const eventsLink = createElement('A', 'events-link');
-    eventsLink.textContent = 'EVENTS';
-    const salesLink = createElement('A', 'sales-link');
-    salesLink.textContent = 'GROUP SALES';
-    const membershipLink = createElement('A', 'membership-link');
-    membershipLink.textContent = 'MEMBERSHIP';
-
-    footer.append(logo, homeLink, filmsLink, eventsLink, salesLink, membershipLink)
-    return footer
-}
-
 function loadHome(){
     const home = createElement('DIV', 'home');
-    const main = document.getElementById('main');
+    const main = createElement('MAIN', 'main')
+    const content = document.getElementById('content')
+
+    clearHTML(content)
 
     const eventsSection = createElement('SECTION', 'events')
     eventsSection.append(createEvents(events))
-    clearHTML(main);
-    main.append(createNav(), createNowPlaying(), createFeaturedMovies(), createShowtimesCont(showtimes));
+    main.append(createNowPlaying(), createFeaturedMovies(), createShowtimesCont(showtimes));
 
-
-    home.append(main, eventsSection, createInfo(), createFooter());
-    
-    return home
+    home.append(main, eventsSection, createInfo());
+    content.append(home)
 }
 
 
