@@ -1,25 +1,284 @@
-*{
+html{
     font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    height: 100%;
 }
 
 body{
     margin: 0;
+    height: 100%;
 }
 
 .nav{
-    padding: 2em;
+    padding: 2rem 2rem 1rem 2rem;
     background-color: #0E0908;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
+    font-size: 15px;
 }
+
+.menu-link{
+    cursor: pointer
+}
+
+.music-box-logo{
+    cursor: pointer;
+}
+
 .member-login-button{
-    font-size: 12px;
-    height: 30px;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+    height: 40px;
+    width: 130px;
     border: none;
     border-radius: 2px;
     background-color: #F23131;
     color: white
+}
+
+h1{
+    font-size: 40pt;
+    letter-spacing: 1px;
+    font-family: 'League Gothic', sans-serif;
+    color: white;
+    margin: 0;
+}
+
+.hr{
+    margin: 0 0 30px 0;
+    height: 10px;
+    border: none;
+    background-color: #F23131;
+}
+
+.home{
+    margin-top: -1px;
+    background-color: #0E0908;  
+}
+
+/*-------------------------------------------------------Main--*/
+
+.home-cont{
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: .1fr 1fr;
+    height: 650px;
+    padding: 2rem 2rem 4rem 2rem;
+}
+
+.now-playing-heading{
+    grid-column: 1/3;
+}
+
+/*---------------------Featured Movie--*/
+
+
+.featured-movie-cont{
+    grid-row: 2;
+    grid-column: 1/2;
+
+    height: 100%;
+
+    position: relative;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+.featured-title{
+    color: white;
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+}
+
+.featured-director{
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+/*---------------------Showtimes--*/
+
+.showtimes-cont{
+    grid-row: 2;
+    color: white;
+    margin-left: 2em;
+    height: 100%;
+}
+
+.showtime-heading,
+.featured-movie-heading{
+    color:#F23131;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+.showtime-cont{
+    display: flex;
+    flex-direction: column;
+    margin: .75rem 0 .75rem 0;
+}
+
+.showtime-title{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.showtime-info-cont{
+    display: flex;
+    font-size: 8px;
+}
+
+h5{
+    margin: 0 10px 0 0;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.showtimes-rule{
+    margin-top: 1.5rem;
+    width: 100%;
+    height: 1px;
+    background-color: #311F1B;
+    border: none;
+}
+
+
+/*-------------------------------------------------------Events--*/
+
+.events{
+    background-color: #F23131;
+    padding: 2rem;
+    display: flex;
+}
+
+.events-cont{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.become-member-button{
+    margin-top: 2rem;
+    background-color: #F23131;
+    font-family: 'Roboto Mono', monospace;
+    height: 40px;
+    width: 160px;
+    border: 2.5px solid black;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.events-heading{
+    color: #0E0908;
+    margin-right: 6rem;
+}
+
+.events-cont-thick-rule,
+.beers-cont-thick-rule{
+    background-color: #0E0908;
+    height: 8px;
+    width: 100%;
+    border: none;
+}
+
+.event-hr,
+.beer-hr{
+    border: none;
+    height: 1.5px;
+    width: 100%;
+    background-color: #0E0908;
+}
+
+/*-------------------------------------------------------Info--*/
+
+.info{
+    display: flex;
+    background-color: #ffffff;
+    height: 300px;
+}
+
+.info-text-cont{
+    width: 50%;
+    padding: 2rem;
+}
+
+.info-section-image{
+    width: 50%;
+    object-fit: cover;
+    padding: -2rem;
+}
+
+/*-------------------------------------------------------Footer--*/
+
+footer{
+    color: white;
+    height: 100px;
+    background-color: #000000;
+    padding: 2em;
+}
+
+footer a{
+    margin: 1em;
+}
+
+/*-------------------------------------------------------Menu--*/
+
+.menu{
+    padding: 2em;
+    background-color: #F23131;
+    display: flex;
+}
+
+.menu-heading{
+    color: #0E0908;
+    width: 250px;
+    margin-right: 2rem;
+}
+
+.beers-cont{
+    width: 100%;
+}
+
+
+/*-------------------------------------------------------Member--*/
+
+.membership-copy-cont{
+    display: flex;
+    padding: 2rem;
+    background-color: #000000;
+    color: white;
+}
+
+.membership-heading{
+    font-size: 16px;
+    padding: 0
+}
+
+.membership-heading-cont{
+    background-color: #000000;
+    padding: 2rem 2rem 0rem 2rem;
+}
+
+.membership-heading-cont hr{
+    margin-bottom: 0;
+}
+
+.membership-subhead{
+    margin-top: 0;
+}
+
+.membership-copy-cont{
+    justify-content: space-between;
+}
+
+.copy-column-1, 
+.copy-column-2{
+    width: 45%;
 }

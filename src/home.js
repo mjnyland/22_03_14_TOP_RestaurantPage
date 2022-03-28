@@ -1,6 +1,6 @@
 import {createElement, clearHTML} from './functions';
 import {createShowtimesCont, Showtime} from './showtimes';
-import {Event, createEvents} from './events'
+import {Event, createEventsHead, createEvents} from './events'
 
 const showtimes = [];
 
@@ -37,6 +37,11 @@ function createNowPlaying(){
 
 function createFeaturedMovies(){
     const featuredMovCont = createElement('DIV', 'featured-movie-cont');
+    
+    const featuredMovHeading = createElement('h3', 'featured-movie-heading')
+    featuredMovHeading.textContent = 'Featured';
+
+
     const featuredThumb = createElement('IMG', 'featured-movie-thumbnail');
     featuredThumb.src = '/src/images/Ratatouille_MovieStill.png';
     const featuredTitle = createElement('h3', 'featured-title');
@@ -44,7 +49,7 @@ function createFeaturedMovies(){
     const featuredDirector = createElement('p', 'featured-director');
     featuredDirector.textContent = 'Brad Bird';
 
-    featuredMovCont.append(featuredThumb, featuredTitle, featuredDirector)
+    featuredMovCont.append(featuredMovHeading, featuredThumb, featuredTitle, featuredDirector)
     return featuredMovCont
 }
 
@@ -52,26 +57,32 @@ function createInfo(){
     const infoSection = createElement('SECTION', 'info');
     const h2 = createElement('H2', 'info-heading');
     const infoText = createElement('P', 'info-text');
+    const infoTextCont = createElement('DIV', 'info-text-cont');
+    infoTextCont.append(h2, infoText)
+    const infoSecImage = createElement('IMG', 'info-section-image');
 
+    infoSecImage.src = '/src/images/Moviegoers_Image.png';
     h2.textContent = 'CHICAGO’S VENUE FOR INDEPENDENT, FOREIGN, CULT AND CLASSIC FILMS.';
     infoText.textContent = 'Turn onto Southport Avenue and it’s hard to resist the neon beacon that lures cinephiles from across Chicagoland with eight flickering letters—Music Box. It’s a promise of more than just entertainment, but a total experience.'
 
-    infoSection.append(h2, infoText);
+    infoSection.append(infoTextCont, infoSecImage);
 
     return infoSection
 }
 
 function loadHome(){
     const home = createElement('DIV', 'home');
-    const main = createElement('MAIN', 'main')
+    const main = createElement('MAIN', 'main');
+    const homeCont = createElement('div', 'home-cont')
     const content = document.getElementById('content')
 
     clearHTML(content)
 
     const eventsSection = createElement('SECTION', 'events')
-    eventsSection.append(createEvents(events))
-    main.append(createNowPlaying(), createFeaturedMovies(), createShowtimesCont(showtimes));
+    eventsSection.append(createEventsHead(), createEvents(events))
+    homeCont.append(createNowPlaying(), createFeaturedMovies(), createShowtimesCont(showtimes));
 
+    main.append(homeCont)
     home.append(main, eventsSection, createInfo());
     content.append(home)
 }

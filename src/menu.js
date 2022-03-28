@@ -19,12 +19,8 @@ beers.push(beer1, beer2, beer3, beer4, beer5)
 
 function createBeersCont(arr){
     const beersCont = createElement('DIV', 'beers-cont')
-
-    const h1 = createElement('H1', 'beer-menu');
-    h1.textContent = 'BEER MENU';
-
-    const img = createElement('IMG', 'menu-image')
-    img.src = '/src/images/mbt-beergarden2-0925.jpeg'
+    const beersThickRule = createElement('HR', 'beers-cont-thick-rule');
+    beersCont.append(beersThickRule)
 
     for (let i = 0; i < 5; i++){
         const beerCont = createElement('DIV', `beer-${i}-cont`);
@@ -34,15 +30,21 @@ function createBeersCont(arr){
         beerDescrip.textContent = arr[i].descrip;
         const beerPrice = createElement('h5', `beer-${i}-price`);
         beerPrice.textContent = arr[i].price;
+        const beerHR = createElement('HR', 'beer-hr')
 
-        beerCont.append(beerName, beerDescrip, beerPrice);
+        beerCont.append(beerName, beerDescrip, beerPrice, beerHR);
 
         beersCont.append(beerCont);
     }
 
-    beersCont.append(h1, img)
-
     return beersCont
+}
+
+function createMenuHead(){
+    const h1 = createElement('H1', 'menu-heading');
+    h1.textContent = 'BEER MENU';
+
+    return h1
 }
 
 function loadMenu(){
@@ -50,7 +52,8 @@ function loadMenu(){
     const content = document.getElementById('content');
     clearHTML(content)
 
-    menu.append(createBeersCont(beers));
+
+    menu.append(createMenuHead(), createBeersCont(beers));
     content.append(menu)
 }
 
