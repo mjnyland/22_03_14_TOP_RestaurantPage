@@ -23,16 +23,22 @@ function createBeersCont(arr){
     beersCont.append(beersThickRule)
 
     for (let i = 0; i < 5; i++){
-        const beerCont = createElement('DIV', `beer-${i}-cont`);
-        const beerName = createElement('h2', `beer-${i}-name`);
+        const beerCont = createElement('DIV', `beer-cont`);
+        const beerName = createElement('h2', `beer-name`);
         beerName.textContent = arr[i].name;
-        const beerDescrip = createElement('h5', `beer-${i}-descrip`);
+        const beerDescrip = createElement('h5', `beer-descrip`);
         beerDescrip.textContent = arr[i].descrip;
-        const beerPrice = createElement('h5', `beer-${i}-price`);
+        const beerPrice = createElement('h5', `beer-price`);
+
+        const beerNameDescripCont = createElement('DIV', 'beer-name-and-descrip-cont')
+        beerNameDescripCont.append(beerName, beerDescrip)
+
+
+
         beerPrice.textContent = arr[i].price;
         const beerHR = createElement('HR', 'beer-hr')
 
-        beerCont.append(beerName, beerDescrip, beerPrice, beerHR);
+        beerCont.append(beerNameDescripCont, beerPrice, beerHR);
 
         beersCont.append(beerCont);
     }

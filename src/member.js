@@ -13,12 +13,16 @@ function createHeading(){
     return membershipHeadingCont
 }
 
+function createMembershipSubhead(){
+    const membershipSubhead = createElement('h2', 'membership-subhead');
+    membershipSubhead.textContent = 'INTERESTED IN A MEMBERSHIP?';
+
+    return membershipSubhead
+}
+
 function createMebershipCopy(){
 
     const copyCont = createElement('DIV', 'membership-copy-cont');
-
-    const membershipSubhead = createElement('h2', 'membership-subhead')
-    membershipSubhead.textContent = 'INTERESTED IN A MEMBERSHIP?'
 
     const p1 = createElement('P', 'membership-copy-1');
     const p2 = createElement('P', 'membership-copy-2');
@@ -70,7 +74,7 @@ function createMebershipCopy(){
     const col1 = createElement('DIV', 'copy-column-1')
     const col2 = createElement('DIV', 'copy-column-2')
 
-    col1.append(membershipSubhead, p1, p2, p3, p4Heading, p4)
+    col1.append(p1, p2, p3, p4Heading, p4)
     col2.append(benefitsHeading, benefitsUL, p5Heading, p5, p6Heading, p6)
 
     copyCont.append(col1, col2)
@@ -84,7 +88,7 @@ function loadMembership(){
 
     const membership = createElement('DIV', 'membership');
     const main = document.createElement('MAIN', 'main')
-    main.append(createHeading(), createMebershipCopy());
+    main.append(createHeading(), createMembershipSubhead(), createMebershipCopy());
     membership.append(main);
 
     content.append(membership)
