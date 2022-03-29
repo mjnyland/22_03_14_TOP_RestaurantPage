@@ -43,7 +43,7 @@ function createFeaturedMovies(){
 
 
     const featuredThumb = createElement('IMG', 'featured-movie-thumbnail');
-    featuredThumb.src = '/src/images/Ratatouille_MovieStill.png';
+    featuredThumb.src = 'images/Ratatouille_MovieStill.png';
     const featuredTitle = createElement('h3', 'featured-title');
     featuredTitle.textContent = 'Ratatoille';
     const featuredDirector = createElement('p', 'featured-director');
@@ -61,7 +61,7 @@ function createInfo(){
     infoTextCont.append(h2, infoText)
     const infoSecImage = createElement('IMG', 'info-section-image');
 
-    infoSecImage.src = '/src/images/Moviegoers_Image.png';
+    infoSecImage.src = 'images/Moviegoers_Image.png';
     h2.textContent = 'CHICAGO’S VENUE FOR INDEPENDENT, FOREIGN, CULT AND CLASSIC FILMS.';
     infoText.textContent = 'Turn onto Southport Avenue and it’s hard to resist the neon beacon that lures cinephiles from across Chicagoland with eight flickering letters—Music Box. It’s a promise of more than just entertainment, but a total experience.'
 

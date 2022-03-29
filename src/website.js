@@ -10,7 +10,7 @@ function createNav(){
     menuLink.textContent = 'Menu';
 
     const logo = createElement('IMG', 'music-box-logo');
-    logo.src = '/src/images/MusicBox_Logo_White.png'
+    logo.src = 'images/MusicBox_Logo_White.png'
     const memberLogin = createElement('BUTTON', 'member-login-button');
     memberLogin.textContent = 'Member Login';
 
